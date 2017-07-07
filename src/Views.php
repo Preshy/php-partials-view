@@ -29,7 +29,7 @@ namespace PPV {
 
 			} catch ( Exception $e ) {
 
-				throw new Exception("Failed to load partials.");
+				throw new Exception("Failed to load partials: ".$e);
 
 			}
 		}
