@@ -25,10 +25,22 @@ Initialize class
 
 $views = new \PPV\Views($root, $header, $footer);
 
-/* Load body */
+/* Load body via this little url route */
 
-$views->load('homepage.php');
+$uri = explode('/', $_SERVER['REQUEST_URI']);
 
+switch($uri[1]){
+
+	case "" : { //homepage
+		$views->load('homepage.php');
+		break;
+	}
+
+	case "about": { //about
+		$views->load('about.php');
+	}
+	
+}
 
 ?>
 
